@@ -1,47 +1,56 @@
 #include "RGBImageStudent.h"
 
 RGBImageStudent::RGBImageStudent() : RGBImage() {
-	int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
 	//TODO: Nothing
 }
 
-RGBImageStudent::RGBImageStudent(const RGBImageStudent &other) : RGBImage(other.getWidth(), other.getHeight()) {
-	int throwError = 0, e = 1 / throwError;
-	//TODO: Create a copy from the other object
+RGBImageStudent::RGBImageStudent(const RGBImageStudent &other) : RGBImage(other.getWidth(), other.getHeight())
+, newRGB(new RGB[other.getHeight()* other.getWidth()]) {
+	for (int i = 0; i < getWidth() * getHeight(); i++) {
+		newRGB[i] = other.newRGB[i];
+	}
+	//TODO: Create a copy from the other object - should be done
 }
 
 
-RGBImageStudent::RGBImageStudent(const int width, const int height) : RGBImage(width, height) {
-	int throwError = 0, e = 1 / throwError;
-	//TODO: Initialize pixel storage
+RGBImageStudent::RGBImageStudent(const int width, const int height) : RGBImage(width, height),
+newRGB(new RGB[width * height]){
+
+	//TODO: Initialize pixel storage - should be done
 }
 
 RGBImageStudent::~RGBImageStudent() {
-	int throwError = 0, e = 1 / throwError;
-	//TODO: delete allocated objects
+	delete[] newRGB;
+	//TODO: delete allocated objects - should be done
 }
 
 void RGBImageStudent::set(const int width, const int height) {
 	RGBImage::set(width, height);
-	int throwError = 0, e = 1 / throwError;
-	//TODO: resize or create a new pixel storage (Don't forget to delete the old storage)
+	delete[] newRGB;
+	this->newRGB = new RGB[width * height];
+	//TODO: resize or create a new pixel storage (Don't forget to delete the old storage) - should be done
 }
 
 void RGBImageStudent::set(const RGBImageStudent &other) {
 	RGBImage::set(other.getWidth(), other.getHeight());
-	int throwError = 0, e = 1 / throwError;
-	//TODO: resize or create a new pixel storage and copy the object (Don't forget to delete the old storage)
+	delete[] newRGB;
+	this->newRGB = new RGB[width * height];
+	for (int i = 0; i < getWidth() * getHeight(); i++) {
+		newRGB[i] = other.newRGB[i];
+	}
+
+	//TODO: resize or create a new pixel storage and copy the object (Don't forget to delete the old storage) - should be done
 }
 
 void RGBImageStudent::setPixel(int x, int y, RGB pixel) {
-	int throwError = 0, e = 1 / throwError;
+	newRGB[y * getWidth() + x] = RGB;
 	//TODO: no comment needed :)
 }
 
 void RGBImageStudent::setPixel(int i, RGB pixel) {
-	int throwError = 0, e = 1 / throwError;
+	newRGB[i] = RGB;
 	/*
-	* TODO: set pixel i in "Row-Major Order"
+	* TODO: set pixel i in "Row-Major Order" -- already done
 	*
 	*
 	* Original 2d image (values):
@@ -64,13 +73,11 @@ void RGBImageStudent::setPixel(int i, RGB pixel) {
 }
 
 RGB RGBImageStudent::getPixel(int x, int y) const {
-	int throwError = 0, e = 1 / throwError;
-	//TODO: no comment needed :)
-	return 0;
+	return newRGB[y * getWidth() + x]
 }
 
 RGB RGBImageStudent::getPixel(int i) const {
-	int throwError = 0, e = 1 / throwError;
+	return newRGB[i];
+
 	//TODO: see setPixel(int i, RGB pixel)
-	return 0;
 }
