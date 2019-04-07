@@ -9,6 +9,7 @@
 #include "HereBeDragons.h"
 #include "ImageFactory.h"
 #include "DLLExecution.h"
+#include "StudentPreProcessing.h"
 
 void drawFeatureDebugImage(IntensityImage &image, FeatureMap &features);
 bool executeSteps(DLLExecution * executor);
@@ -19,29 +20,208 @@ int main(int argc, char * argv[]) {
 	ImageFactory::setImplementation(ImageFactory::STUDENT);
 
 
-	ImageIO::debugFolder = "C:/Users/Yaluzan/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/128";
-	ImageIO::isInDebugMode = true; //If set to false the ImageIO class will skip any image save function calls
+	//ImageIO::debugFolder = "C:/Users/Yaluzan/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/128";
+	//ImageIO::isInDebugMode = true; //If set to false the ImageIO class will skip any image save function calls
 
 
 
 
-	RGBImage * input = ImageFactory::newRGBImage();
-	if (!ImageIO::loadImage("C:/Users/Yaluzan/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/128/GcDDfggnkENXnBd-128x128-noPad.png", *input)) {
+	
+	/*if (!ImageIO::loadImage("C:/Users/Yaluzan/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/128/GcDDfggnkENXnBd-128x128-noPad.png", *input)) {
 		std::cout << "Image could not be loaded!" << std::endl;
 		system("pause");
 		return 0;
+	}*/
+	ImageIO::isInDebugMode = true;
+	std::string path;
+	StudentPreProcessing studentPreProcessing;
+	DefaultPreProcessing defaultPreProcessing;
+	RGBImage * input = ImageFactory::newRGBImage();
+	
+	//STUDENT PREPROCESSING
+
+	//128x128 images
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/128Convert";
+	for (int i = 1; i <= 200; i++) {
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/128/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = studentPreProcessing.stepToIntensityImage(*input);
+	}*/
+	
+	//256x256 images
+	/*ImageIO::debugFolder = "c:/users/chnva/source/repos/hu-vision-practica-18-19/meetrapporten/working/images/256convert";
+	for (int i = 1; i <= 200; i++) {
+
+		path = "c:/users/chnva/source/repos/hu-vision-practica-18-19/meetrapporten/working/images/256/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = studentPreProcessing.stepToIntensityImage(*input);
+	}*/
+	
+
+	//480x480 images
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/480Convert";
+	for (int i = 1; i <= 9; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/480/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = studentPreProcessing.stepToIntensityImage(*input);
+	}*/
+
+	//512x512 images
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/512Convert";
+	for (int i = 1; i <= 54; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/512/1 (";
+		path.append(std::to_string(i));
+		path.append(").png");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = studentPreProcessing.stepToIntensityImage(*input);
+	}*/
+
+	//720x720
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/720Convert";
+	for (int i = 1; i <= 9; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/720/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");		ImageIO::loadImage(path, *input);
+		IntensityImage *output = studentPreProcessing.stepToIntensityImage(*input);
+	}*/
+	
+	//1024x1024
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1024Convert";
+	for (int i = 1; i <= 80; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1024/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = studentPreProcessing.stepToIntensityImage(*input);
+	}*/
+
+	//1080x1080
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1080Convert";
+	for (int i = 1; i <= 9; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1080/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = studentPreProcessing.stepToIntensityImage(*input);
+	}*/
+
+	//1440x1440
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1440Convert";
+	for (int i = 1; i <= 10; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1440/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = studentPreProcessing.stepToIntensityImage(*input);
+	}*/
+	
+
+	//DEFAULT PREPROCESSING
+	
+	//128x128 images
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/128Convert";
+	for (int i = 1; i <= 200; i++) {
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/128/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = defaultPreProcessing.stepToIntensityImage(*input);
+	}*/
+
+	//256x256 images
+	/*ImageIO::debugFolder = "c:/users/chnva/source/repos/hu-vision-practica-18-19/meetrapporten/working/images/256convert";
+	for (int i = 1; i <= 200; i++) {
+
+		path = "c:/users/chnva/source/repos/hu-vision-practica-18-19/meetrapporten/working/images/256/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = defaultPreProcessing.stepToIntensityImage(*input);
+	}*/
+
+
+	//480x480 images
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/480Convert";
+	for (int i = 1; i <= 9; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/480/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = defaultPreProcessing.stepToIntensityImage(*input);
+	}*/
+
+	//512x512 images
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/512Convert";
+	for (int i = 1; i <= 54; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/512/1 (";
+		path.append(std::to_string(i));
+		path.append(").png");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = defaultPreProcessing.stepToIntensityImage(*input);
+	}*/
+
+	//720x720
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/720Convert";
+	for (int i = 1; i <= 9; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/720/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");		ImageIO::loadImage(path, *input);
+		IntensityImage *output = defaultPreProcessing.stepToIntensityImage(*input);
+	}*/
+
+	//1024x1024
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1024Convert";
+	for (int i = 1; i <= 80; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1024/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = defaultPreProcessing.stepToIntensityImage(*input);
+	}*/
+
+	//1080x1080
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1080Convert";
+	for (int i = 1; i <= 9; i++) {
+
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1080/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = defaultPreProcessing.stepToIntensityImage(*input);
 	}
+*/
+	//1440x1440
+	/*ImageIO::debugFolder = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1440Convert";
+	for (int i = 1; i <= 10; i++) {
 
-	for (int i = 0; i < 200; i++) {
-		ImageIO::loadImage("C:/Users/Yaluzan/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/256/1 (" + (char)i + ").jpg", *input))
-{
+		path = "C:/Users/chnva/source/repos/HU-Vision-practica-18-19/meetrapporten/working/images/1440/1 (";
+		path.append(std::to_string(i));
+		path.append(").jpg");
+		ImageIO::loadImage(path, *input);
+		IntensityImage *output = defaultPreProcessing.stepToIntensityImage(*input);
+	}*/
 
-	}
-
-
-	ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
-
-	DLLExecution * executor = new DLLExecution(input);
+	
+	
+	
+	
+	//DLLExecution * executor = new DLLExecution(input);
 
 
 	/*if (executeSteps(executor)) {
@@ -52,9 +232,9 @@ int main(int argc, char * argv[]) {
 		}
 	}*/
 
-	delete executor;
-	system("pause");
-	return 1;
+	//delete executor;
+	//system("pause");
+	//return 1;
 }
 
 

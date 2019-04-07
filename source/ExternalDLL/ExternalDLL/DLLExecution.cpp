@@ -374,7 +374,7 @@ bool DLLExecution::executePreProcessingStep1(bool student) {
 	if (student) {
 		resultPreProcessingStep1 = studentPreProcessing.stepToIntensityImage(*inputImage);
 	} else {
-		resultPreProcessingStep1 = studentPreProcessing.stepToIntensityImage(*inputImage);
+		resultPreProcessingStep1 = defaultPreProcessing.stepToIntensityImage(*inputImage);
 	}
 	return resultPreProcessingStep1 != NULL;
 }
