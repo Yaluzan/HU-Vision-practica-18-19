@@ -8,6 +8,7 @@ IntensityImage * StudentPreProcessing::stepToIntensityImage(const RGBImage &imag
 	for (int i = 0; i < image.getHeight() * image.getWidth(); i++) {
 		intensity.setPixel(i, image.getPixel(i).g);
 	}
+	ImageIO::saveIntensityImage(intensity, ImageIO::getDebugFileName("Debug.png"));
 	return &intensity;
 }
 

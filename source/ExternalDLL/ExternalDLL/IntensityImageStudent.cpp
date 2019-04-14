@@ -5,7 +5,7 @@ IntensityImageStudent::IntensityImageStudent() : IntensityImage() {
 }
 
 IntensityImageStudent::IntensityImageStudent(const IntensityImageStudent &other) : IntensityImage(other.getWidth(), other.getHeight())
-, newInt(new Intensity[other.getHeight()* other.getWidth()]) {
+, newInt(new Intensity[other.getWidth()* other.getHeight()]) {
 	for (int i = 0; i < getWidth() * getHeight(); i++) {
 		newInt[i] = other.newInt[i];
 	}
