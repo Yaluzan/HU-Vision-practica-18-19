@@ -1,15 +1,26 @@
 #include "StudentPreProcessing.h"
 #include <iostream>
 #include "ImageIO.h"
+#include "ImageFactory.h"
+
+/*
+stepToIntensityImage
+RGB &image
+
+Wij maken een nieuwe intensity image aan vanuit de imagefactory 
+die alle groene waardes krijgt van de RGB image. Dit is verder uitgelegd in het verslag.
 
 
+Return IntensityImage pointer van ImageFactory
+
+*/
 IntensityImage * StudentPreProcessing::stepToIntensityImage(const RGBImage &image) const {
-	IntensityImageStudent intensity(image.getWidth(), image.getHeight());
-	for (int i = 0; i < image.getHeight() * image.getWidth(); i++) {
-		intensity.setPixel(i, image.getPixel(i).g);
+	//std::cout << "| Width: " << image.getWidth() << "| Height: " << image.getHeight();
+	IntensityImage * intensity = ImageFactory::newIntensityImage(image.getWidth(), image.getHeight());
+	for (int i = 0; i < image.getWidth() *image.getHeight(); i++) {
+		intensity->setPixel(i, image.getPixel(i).g);
 	}
-	ImageIO::saveIntensityImage(intensity, ImageIO::getDebugFileName("Debug.png"));
-	return &intensity;
+	return intensity;
 }
 
 //IntensityImage * StudentPreProcessing::stepToIntensityImage(const RGBImage &image) const {

@@ -25,7 +25,7 @@
     <UseOfMfc>false</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -130,13 +130,14 @@
     <ClCompile Include="IntensityImage.cpp" />
     <ClCompile Include="IntensityImagePrivate.cpp" />
     <ClCompile Include="IntensityImageStudent.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainDebugstuff.cpp" />
     <ClCompile Include="HereBeDragons.cpp" />
     <ClCompile Include="PostProcessing.cpp" />
     <ClCompile Include="Representation.cpp" />
     <ClCompile Include="RGBImage.cpp" />
     <ClCompile Include="RGBImagePrivate.cpp" />
     <ClCompile Include="RGBImageStudent.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="StudentExtraction.cpp" />
     <ClCompile Include="StudentLocalization.cpp" />
     <ClCompile Include="StudentPreProcessing.cpp" />

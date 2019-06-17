@@ -2,10 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\source",
-    "\\source\\ExternalDLL",
     "\\source\\ExternalDLL\\ExternalDLL",
-    "\\source\\FaceRecognitionGUI"
+    "\\source\\FaceRecognitionGUI",
+    "\\source\\FaceRecognitionGUI\\FaceRecognitionGUI"
   ],
-  "SelectedNode": "\\source\\ExternalDLL\\ExternalDLL2017.sln",
+  "SelectedNode": "\\source\\FaceRecognitionGUI\\FaceRecognitionGUI.sln",
   "PreviewInSolutionExplorer": false
 }
